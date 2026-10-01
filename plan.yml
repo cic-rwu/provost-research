@@ -1,11 +1,10 @@
-research-question: |
-  Does access to hands-on environments imrpove learning for students in Cybersecurity?
+main-hypothesis: Does access to hands-on environments improve students practical knowledge and critical thinking skills in Cybersecurity?
 
 hypothesis:
   - H1: Students who complete "ACE" labs score higher on a practical task compared to those who do not
 
   - H2: ACE students report a larger gain in self-rated confidence compared to those who do not
-  
+
   - H3: The gains are largest for students with no prior homelab experience
 
 study-design:
