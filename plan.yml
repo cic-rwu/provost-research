@@ -19,11 +19,14 @@ definitions:
     A student-maintained network for development
 
 study-design:
-  type: quasi-experimental with pre/post measurements
-  treatment-group: students who complete a set of ACE labs over a fixed period
-  control-group: students who do not complete the ACE labs
-  sample: 10-15 students in each group
-
+  type: randomized waitlist, pre/post group
+  population: undergraduate students enrolled in cybersecurity courses at Roger Williams University
+  treatment-group: complete 5 ACE labs over 6 weeks (1 lab/week + buffer week) # maybe we have 4 labs for a month?
+  control-group: normal coursework without access to ACE
+  sample:
+    target: 10-15 per group
+    minimum: 5
+    
 ace-labs:
   - IDS: Find a planted event inside an IDS and explain it
     platform: 
