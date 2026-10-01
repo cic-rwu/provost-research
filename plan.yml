@@ -13,3 +13,29 @@ study-design:
   treatment-group: students who complete a set of ACE labs over a fixed period
   control-group: students who do not complete the ACE labs
   sample: 10-15 students in each group
+
+ace-labs:
+  - IDS: Find a planted event inside an IDS and explain it
+    platform: 
+      - wazuh
+      - splunk
+
+  - firewall: Configure a basic firewall rule and explain its purpose
+    platform: 
+      - pfsense
+      - opnsense
+      - palo alto
+
+  - visualization: build a simple visualization dashboard
+    platform: 
+      - grafana
+  
+  - vulnerability-assessment: Identify and analyze vulnerabilities in a given system
+    platform: 
+      - nessus
+      - openvas
+  
+  - incident-response: Respond to a simulated security incident and document the steps taken
+    platform: 
+      - elasticsearch
+      - kibana
