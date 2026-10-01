@@ -1,11 +1,22 @@
-main-hypothesis: Does access to hands-on environments improve students practical knowledge and critical thinking skills in Cybersecurity?
+hypothesis: Does access to hands-on environments improve students practical knowledge and critical thinking skills in Cybersecurity?
 
-hypothesis:
-  - H1: Students who complete "ACE" labs score higher on a practical task compared to those who do not
+sub-hypothesis:
+  H1:
+    statement: Freshmen who utilize ACE labs will have similar times on the exit lab, in contrast to seniors who dont utilize ACE
+    measure: difference in time to finish the exit lab
 
-  - H2: ACE students report a larger gain in self-rated confidence compared to those who do not
+  H2:
+    statement: ACE students score higher on the critical-thinking component of the post practical task
+    measure: practical-task explanation score
+  
+  exploratory:
+    H3:
+      statement: Effects are larger for students with no prior homelab experience
 
-  - H3: The gains are largest for students with no prior homelab experience
+definitions:
+  ace: |
+    Advanced Collaboration Environment
+    A student-maintained network for development
 
 study-design:
   type: quasi-experimental with pre/post measurements
