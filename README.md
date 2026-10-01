@@ -1,5 +1,3 @@
-We are now accepting applications for round one of the 2026-2027 Provost's Fund for Student Research grants.  The deadline to apply for round one funding is October 9, 2026.   
-
 The Provost’s Fund for Student Research grants are intended to support student research and assist with expenses associated with students presenting their research at conferences or for any purpose that would enhance their research efforts.  For example, grant money could be used to access special research collections, data compilation, the purchase of equipment unique to the student’s project and not covered by a grant (if applicable), or for research presentations.  
 
 Nature and Scope of the Project:  
