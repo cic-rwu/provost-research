@@ -7,3 +7,9 @@ hypothesis:
   - H2: ACE students report a larger gain in self-rated confidence compared to those who do not
   
   - H3: The gains are largest for students with no prior homelab experience
+
+study-design:
+  type: quasi-experimental with pre/post measurements
+  treatment-group: students who complete a set of ACE labs over a fixed period
+  control-group: students who do not complete the ACE labs
+  sample: 10-15 students in each group
