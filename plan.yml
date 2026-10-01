@@ -39,3 +39,19 @@ ace-labs:
     platform: 
       - elasticsearch
       - kibana
+
+measures:
+  pre-experiment:
+    - survey: students are given a pre-test survey to assess their baseline knowledge and confidence levels
+      analysis: compare students self-rated confidence between the treatment and control groups
+
+  mid-experiment:
+    - timed-labs: cumulative time to complete labs are recorded 
+      analysis: compare cumulative lab time to final lab time
+
+  post-experiment:
+    - survey: students are given a post-test survey to assess their knowledge and confidence levels after the intervention
+      analysis: compare students self-rated confidence between the treatment and control groups
+
+    - final-lab: students complete a final assessment lab to demonstrate their skills
+      analysis: compare times between groups
