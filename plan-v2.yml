@@ -72,14 +72,25 @@ ace-labs:
       name: incident-response
       objective: Investigate a simulated incident end-to-end and document a timeline and response
       platform: Elastic Stack (Elasticsearch + Kibana)
-  optional-commercial-equivalents: [Splunk Free, Nessus Essentials, Palo Alto VM eval]  # only if no-cost licenses available
+  optional-commercial-equivalents: [
+      Splunk Free,
+      Nessus Essentials,
+      Palo Alto VM eval,
+    ] # only if no-cost licenses available
 
 measures:
   pre-test:
     - instrument: background survey
-      items: [year, major, prior courses, certifications, homelab experience (yes/no + months)]
-    - instrument: self-efficacy scale
-      items: ~15 Likert items, 3 per lab domain, adapted from a published cybersecurity self-efficacy scale
+      items:
+        [
+          year,
+          major,
+          prior courses,
+          certifications,
+          homelab experience (yes/no + months),
+          confidence in Ace-lab topics,
+        ]
+
     - instrument: practical task (form A or B, counterbalanced)
       duration: 45 minutes
       scoring: rubric -> technical score (0-20) + critical-thinking score (0-20)
@@ -110,20 +121,6 @@ analysis:
   qualitative: thematic coding of exit-survey responses
   tools: R or Python (statsmodels / scipy)
 
-threats-to-validity:
-  - small sample -> pilot framing, effect sizes
-  - contamination (controls accessing labs) -> lab access gated per account
-  - testing effect -> counterbalanced parallel forms
-  - grader bias -> blinding + two graders
-  - attrition -> short intervention, reminders, completion incentive if budget allows
-
-ethics:
-  - IRB approval before recruitment
-  - informed consent; right to withdraw without penalty
-  - participation independent of course grades
-  - de-identified data via participant codes; stored on university storage
-  - waitlist control ensures every participant gets lab access
-
 timeline:
   2026-10-09: submit Round One application
   2026-10 to 2026-11: IRB submission; finalize rubric and task forms A/B
@@ -136,7 +133,7 @@ timeline:
   2027-05: write-up, poster/paper
   2027-05 to 2027-06-14: present at conference/university symposium; all funds spent before 2027-06-15
 
-budget:  # project max $1,500; research costs max $300
+budget: # project max $1,500; research costs max $300
   research-costs:
     - item: lab hosting / cloud credits or hardware consumables
       amount: <= 300

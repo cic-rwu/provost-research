@@ -6,12 +6,13 @@ sub-hypothesis:
     measure: difference in time to finish the exit lab
 
   H2:
-    statement: ACE students score higher on the critical-thinking component of the post practical task
-    measure: practical-task explanation score
-  
+    statement: ACE students score higher on the critical-thinking component of the post-exam
+    measure: post-exam score
+
   exploratory:
     H3:
       statement: Effects are larger for students with no prior homelab experience
+      measure: Pre exam homelab question.
 
 definitions:
   ace: |
@@ -19,52 +20,82 @@ definitions:
     A student-maintained network for development
 
 study-design:
-  type: randomized waitlist, pre/post group
+  type: pre/post group
   population: undergraduate students enrolled in cybersecurity courses at Roger Williams University
-  treatment-group: complete 5 ACE labs over 6 weeks (1 lab/week + buffer week) # maybe we have 4 labs for a month?
+  treatment-group: complete 4 ACE labs over 1 month
   control-group: normal coursework without access to ACE
   sample:
     target: 10-15 per group
     minimum: 5
-    
+
 ace-labs:
-  - IDS: Find a planted event inside an IDS and explain it
-    platform: 
-      - wazuh
-      - splunk
+  Common-structure:
+    duration: 1 week
+    format: scenario brief -> guided tasks -> Conditional test -> Write up
+    environment: Ace Network (kubernetes or docker)
 
-  - firewall: Configure a basic firewall rule and explain its purpose
-    platform: 
-      - pfsense
-      - opnsense
-      - palo alto
+  sequence:
+    - id: 1
+      Name: IDS
+      objective: Find a planted malicious event in IDS alerts and explain its significance
+      platform:
+        - wazuh
+        - splunk
 
-  - visualization: build a simple visualization dashboard
-    platform: 
-      - grafana
-  
-  - vulnerability-assessment: Identify and analyze vulnerabilities in a given system
-    platform: 
-      - nessus
-      - openvas
-  
-  - incident-response: Respond to a simulated security incident and document the steps taken
-    platform: 
-      - elasticsearch
-      - kibana
+    - id: 2
+      Name: Firewall
+      objective: Configure a basic firewall rule and explain its purpose
+      platform:
+        - pfsense
+        - opnsense
+        - palo alto
+
+    - id: 3
+      Name: vulnerability-assessment
+      objective: Identify and analyze vulnerabilities in a given system
+      platform:
+        - nessus
+        - openvas
+
+    - id: 4
+      Name: incident-response
+      objective: Respond to a simulated security incident and document the steps taken
+      platform:
+        - elasticsearch
+        - kibana
 
 measures:
   pre-experiment:
-    - survey: students are given a pre-test survey to assess their baseline knowledge and confidence levels
-      analysis: compare students self-rated confidence between the treatment and control groups
-
-  mid-experiment:
-    - timed-labs: cumulative time to complete labs are recorded 
-      analysis: compare cumulative lab time to final lab time
+    - instrument: background survey
+      items:
+        [
+          year,
+          major,
+          prior courses,
+          certifications,
+          homelab experience (yes/no + months),
+          confidence in Ace-lab topics,
+        ]
+      analysis: compare survey items in the treatment and control groups. Additionally track time to complete Ace-lab tasks.
 
   post-experiment:
-    - survey: students are given a post-test survey to assess their knowledge and confidence levels after the intervention
+    - survey: students are given a post-test survey to assess their knowledge and confidence levels after the labs
       analysis: compare students self-rated confidence between the treatment and control groups
 
-    - final-lab: students complete a final assessment lab to demonstrate their skills
-      analysis: compare times between groups
+    - final-lab: students complete a final assessment lab to demonstrate their skills. (final lab will encompass aspects from previous labs)
+      analysis: compare times between groups. Also compare cumulative lab time to final lab time
+
+  Scoring: programmatically test pre/post group Ace-labs for their completion and accuracy
+
+budget: # project max $1,500; research costs max $300
+  research-costs:
+    - item: lab hosting / VPS or hardware consumables
+      amount: <=150
+    - item: paid volunteer
+      amount: TBD
+  presentation-costs:
+    - item: SASH
+  total: TBD
+  note: open-source platforms keep software licensing at $0
+
+By: Vincent Ratcliffe, Max Hamlin, and additional contributors
